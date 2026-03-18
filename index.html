@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Churrascômetro - JF</title>
+    <link rel="shortcut icon" href="Imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h2>Churrascômetro 🥩</h2>
+            <div class="compartilhar-container">
+                <button id="btnCompartilhar" onclick="compartilhar()">
+                    <span>🔗</span> Compartilhar Site
+                </button>
+            </div>
+            <label for="tipoChurrasco">TIPO DE EVENTO</label>
+            <select id="tipoChurrasco">
+                <option value="economico">Econômico (Frango/Linguiça)</option>
+                <option value="tradicional" selected>Tradicional (Alcatra/Contra)</option>
+                <option value="premium">Premium (Picanha/Nobre)</option>
+            </select>
+            <label>CONVIDADOS E TEMPO</label>
+            <div style="display: flex; gap: 10px;">
+                <input id="adultos" type="number" placeholder="Adultos">
+                <input id="criancas" type="number" placeholder="Crianças">
+            </div>
+            <input id="duracao" type="number" placeholder="Duração da festa (horas)" style="margin-top: 10px;">
+            <label>QUEM BEBE ÁLCOOL? <span id="valPercent">80%</span></label>
+            <input type="range" id="percentAlcool" min="0" max="100" value="80" class="slider" oninput="updatePercent(this.value)">
+            <button id="btnCalcular" onclick="calcular()">GERAR LISTA E DETALHES</button>
+            <div id="resultado" style="display:none;">
+                <h3 style="text-align:center; margin-top:0;">📋 Lista de Compras</h3>
+                <div id="lista-compras"></div>
+                <hr>
+                <div id="detalhes-logica"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
